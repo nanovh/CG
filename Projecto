@@ -1,1 +1,42 @@
+#include "Main.h"
+#include "3ds.h"
 
+HDC			hDC=NULL;		// Dispositivo de contexto GDI
+HGLRC		hRC=NULL;		// Contexto de renderizado
+HWND		hWnd=NULL;		// Manejador de ventana
+HINSTANCE	hInstance;		// Instancia de la aplicacion
+
+bool	keys[256];			// Arreglo para el manejo de teclado
+bool	active=TRUE;		// Bandera de ventana activa
+float s=1;
+int glWidth;
+int glHeight;
+
+//Variable para cambiar entre render sólido y alambrado
+int renderModo;
+
+//variables para la cámara
+CVector PosCam;
+CVector ObjCam;
+
+//Variables para iluminacion
+GLfloat LightPos[] = {0.0f, 30.0f, 50.0f, 1.0f};		// Posición de la luz
+GLfloat LightAmb[] = { 0.7f,  0.7f, 0.7f, 1.0f};		// Valores de la componente ambiente
+GLfloat LightDif[] = { 1.0f,  1.0f, 1.0f, 1.0f};		// Valores de la componente difusa
+GLfloat LightSpc[] = { 0.8f,  0.8f, 0.8f, 1.0f};		// Valores de la componente especular
+CVector lightPosition;
+
+//Apuntador para primitivas de cuadricas
+GLUquadricObj	*e;
+
+//Nombre y ubicación de los modelos
+#define FILE_NAME1p  "Modelos/torso.3ds"
+#define FILE_NAME2p  "Modelos/cabeza.3ds"
+#define FILE_NAME3p  "Modelos/pierna_a.3ds"
+#define FILE_NAME4p  "Modelos/pierna_b.3ds"
+#define FILE_NAME5p  "Modelos/pie.3ds"
+#define FILE_NAME6p  "Modelos/brazo der_a.3ds"
+#define FILE_NAME7p  "Modelos/brazo der_b.3ds"
+#define FILE_NAME8p  "Modelos/brazo izq_a.3ds"
+#define FILE_NAME9p  "Modelos/brazo izq_b.3ds"
+#define FILE_NAME10p "Modelos/arma.3ds"

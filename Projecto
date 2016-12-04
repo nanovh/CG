@@ -1,16 +1,4 @@
-#include "Main.h"
-#include "3ds.h"
 
-HDC			hDC=NULL;		// Dispositivo de contexto GDI
-HGLRC		hRC=NULL;		// Contexto de renderizado
-HWND		hWnd=NULL;		// Manejador de ventana
-HINSTANCE	hInstance;		// Instancia de la aplicacion
-
-bool	keys[256];			// Arreglo para el manejo de teclado
-bool	active=TRUE;		// Bandera de ventana activa
-float s=1;
-int glWidth;
-int glHeight;
 
 //Variable para cambiar entre render sólido y alambrado
 int renderModo;

@@ -1,0 +1,17 @@
+﻿Compilación iniciada a las 05/12/2016 05:40:20 p. m..
+     1>Proyecto "C:\Users\Alan\Desktop\Septimo\Grafica\Programas\Programa_3\OGL_CodigoBase.vcxproj" en el nodo 2 (Build destinos).
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /ILibrerias /ZI /nologo /W0 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _WINDOWS /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc110.pdb" /Gd /TP /analyze- /errorReport:prompt Main.cpp
+         Main.cpp
+       Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\Alan\Desktop\Septimo\Grafica\Programas\Programa_3\Debug\OGL_CodigoBase.exe" /INCREMENTAL /NOLOGO /LIBPATH:Librerias opengl32.lib glu32.lib glaux.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\Alan\Desktop\Septimo\Grafica\Programas\Programa_3\Debug\OGL_CodigoBase.pdb" /SUBSYSTEM:WINDOWS /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\Alan\Desktop\Septimo\Grafica\Programas\Programa_3\Debug\OGL_CodigoBase.lib" /MACHINE:X86 /SAFESEH Debug\3ds.obj
+         Debug\cargadorTGA.obj
+         Debug\Main.obj
+         Debug\Vector.obj
+     1>3ds.obj : warning LNK4075: se omite '/EDITANDCONTINUE' debido a la especificaci¾n '/SAFESEH'
+         OGL_CodigoBase.vcxproj -> C:\Users\Alan\Desktop\Septimo\Grafica\Programas\Programa_3\Debug\OGL_CodigoBase.exe
+     1>Compilación del proyecto terminada "C:\Users\Alan\Desktop\Septimo\Grafica\Programas\Programa_3\OGL_CodigoBase.vcxproj" (Build destinos).
+
+Compilación correcta.
+
+Tiempo transcurrido 00:00:05.16

@@ -1,0 +1,20 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Express 2012 for Windows Desktop
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "OGL_CodigoBase", "OGL_CodigoBase.vcxproj", "{22D20F45-198F-4963-855C-67AB6E832438}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{22D20F45-198F-4963-855C-67AB6E832438}.Debug|Win32.ActiveCfg = Debug|Win32
+		{22D20F45-198F-4963-855C-67AB6E832438}.Debug|Win32.Build.0 = Debug|Win32
+		{22D20F45-198F-4963-855C-67AB6E832438}.Release|Win32.ActiveCfg = Release|Win32
+		{22D20F45-198F-4963-855C-67AB6E832438}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

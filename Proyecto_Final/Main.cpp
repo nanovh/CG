@@ -12,15 +12,15 @@ float s=1;
 int glWidth;
 int glHeight;
 float rota=0.0;
-//Variable para cambiar entre render sÛlido y alambrado
+//Variable para cambiar entre render s√≥lido y alambrado
 int renderModo;
 
-//variables para la c·mara
+//variables para la c√°mara
 CVector PosCam;
 CVector ObjCam;
 
 //Variables para iluminacion
-GLfloat LightPos[] = {0.0f, 30.0f, 50.0f, 1.0f};		// PosiciÛn de la luz
+GLfloat LightPos[] = {0.0f, 30.0f, 50.0f, 1.0f};		// Posici√≥n de la luz
 GLfloat LightAmb[] = { 0.7f,  0.7f, 0.7f, 1.0f};		// Valores de la componente ambiente
 GLfloat LightDif[] = { 1.0f,  1.0f, 1.0f, 1.0f};		// Valores de la componente difusa
 GLfloat LightSpc[] = { 0.8f,  0.8f, 0.8f, 1.0f};		// Valores de la componente especular
@@ -32,7 +32,7 @@ GLUquadricObj	*e;
 //Contenedor de texturas para el escenario
 CTga textura[26];
 
-//Nombre y ubicaciÛn de los modelos
+//Nombre y ubicaci√≥n de los modelos
 #define FILE_NAME1p  "Modelos/torso2.3ds"
 #define FILE_NAME2p  "Modelos/cabecilla.3ds"
 #define FILE_NAME3p  "Modelos/pierna_a1.3ds"
@@ -70,7 +70,7 @@ t3DModel g_3DModel8;
 t3DModel g_3DModel9;
 t3DModel g_3DModel10;
 
-//Variables del personaje (para modelado jer·rquico)
+//Variables del personaje (para modelado jer√°rquico)
 jerarquiaModelo player1modelo;	//Acceso a la estructura con las variables de cada pieza del modelo
 
 bool disparando=false;
@@ -83,7 +83,7 @@ paramObjCam player1;
 
 LRESULT	CALLBACK WndProc(HWND, UINT, WPARAM, LPARAM);	// Declaracion de WndProc (Procedimiento de ventana)
 
-//Variables de animaciÛn de los personajes
+//Variables de animaci√≥n de los personajes
 const int maxKF1=3; //Num. total de KeyFrames para la secuencia 1 (caminar)
 FRAME KeyFrame1p1[maxKF1]; //Contenedor para almacenar cada keyframe de la secuencia 1 del player 1
 varsAnim varsAnimP1; //datos de para animacion del player 1
@@ -211,10 +211,24 @@ void movimientoPersonaje(int dir)
 	}
 	else if(dir == 2) //izquierda
 	{
+		if(player1.PosicionObj.x>0){
 		player1.PosicionObj.x-=player1.VelocidadObj;
 		PosCam.x-=player1.VelocidadObj;
 		ObjCam.x-=player1.VelocidadObj;
 		player1.AngObj=-90.0f;
+		}
+	}
+	else if(dir == 3) //Al frente
+	{
+		if(player1.PosicionObj.z<22){
+		player1.PosicionObj.z+=0.5f;
+		}
+	}
+	else if(dir == 4) //Al frente
+	{
+		if(player1.PosicionObj.z>2){
+		player1.PosicionObj.z-=0.5f;
+		}
 	}
 }
 
@@ -277,10 +291,10 @@ void InicializaAnim()
 		KeyFrame1p1[i].incZtor=0.0f;
 	}
 
-	varsAnimP1.play=false; //inicialmente sin animaciÛn (se activa al presionar la tecla para avanzar)
+	varsAnimP1.play=false; //inicialmente sin animaci√≥n (se activa al presionar la tecla para avanzar)
 	varsAnimP1.playIndex=0;//inicia desde el primer keyframe
 	varsAnimP1.tipoAnim=1;
-	varsAnimP1.loop=0;     //sin repeticiÛn ya que se activa mediante el teclado
+	varsAnimP1.loop=0;     //sin repetici√≥n ya que se activa mediante el teclado
 }
 
 void DatosAnimacion()
@@ -374,7 +388,7 @@ int IniGL(GLvoid)										// Aqui se configuran los parametros iniciales de Ope
 	glClearDepth(1.0f);									// Valor para el Depth Buffer
 	glEnable(GL_DEPTH_TEST);							// Activa Depth Testing
 	glDepthFunc(GL_LEQUAL);								// Tipo de Depth Testing a usar
-	glHint(GL_PERSPECTIVE_CORRECTION_HINT, GL_NICEST);	// Correccion de c·lculos de perspectiva
+	glHint(GL_PERSPECTIVE_CORRECTION_HINT, GL_NICEST);	// Correccion de c√°lculos de perspectiva
 	inicializaCamara();
 	glCullFace(GL_BACK);								// Configurado para eliminar caras traseras
 	glEnable(GL_CULL_FACE);								// Activa eliminacion de caras ocultas
@@ -385,7 +399,7 @@ int IniGL(GLvoid)										// Aqui se configuran los parametros iniciales de Ope
 	InicializaAnim();
 	DatosAnimacion();
 	glEnable(GL_LIGHT0);					// Activa luz0
-	//glEnable(GL_LIGHTING);					// Habilita la iluminaciÛn
+	//glEnable(GL_LIGHTING);					// Habilita la iluminaci√≥n
 	//glDisable(GL_LIGHTING);
 	iniPersonaje(1);
 	e=gluNewQuadric();
@@ -614,14 +628,14 @@ void dibujaCaja()
 void prisma (float altura, float largo, float profundidad, int text)  //Funcion creacion prisma
 {
 	GLfloat vertice [8][3] = {
-				{0.5*largo ,-0.5*altura, 0.5*profundidad},    //Coordenadas VÈrtice 1 V1
-				{-0.5*largo ,-0.5*altura , 0.5*profundidad},    //Coordenadas VÈrtice 2 V2
-				{-0.5*largo ,-0.5*altura , -0.5*profundidad},    //Coordenadas VÈrtice 3 V3
-				{0.5*largo ,-0.5*altura , -0.5*profundidad},    //Coordenadas VÈrtice 4 V4
-				{0.5*largo ,0.5*altura , 0.5*profundidad},    //Coordenadas VÈrtice 5 V5
-				{0.5*largo ,0.5*altura , -0.5*profundidad},    //Coordenadas VÈrtice 6 V6
-				{-0.5*largo ,0.5*altura , -0.5*profundidad},    //Coordenadas VÈrtice 7 V7
-				{-0.5*largo ,0.5*altura , 0.5*profundidad},    //Coordenadas VÈrtice 8 V8
+				{0.5*largo ,-0.5*altura, 0.5*profundidad},    //Coordenadas V√©rtice 1 V1
+				{-0.5*largo ,-0.5*altura , 0.5*profundidad},    //Coordenadas V√©rtice 2 V2
+				{-0.5*largo ,-0.5*altura , -0.5*profundidad},    //Coordenadas V√©rtice 3 V3
+				{0.5*largo ,-0.5*altura , -0.5*profundidad},    //Coordenadas V√©rtice 4 V4
+				{0.5*largo ,0.5*altura , 0.5*profundidad},    //Coordenadas V√©rtice 5 V5
+				{0.5*largo ,0.5*altura , -0.5*profundidad},    //Coordenadas V√©rtice 6 V6
+				{-0.5*largo ,0.5*altura , -0.5*profundidad},    //Coordenadas V√©rtice 7 V7
+				{-0.5*largo ,0.5*altura , 0.5*profundidad},    //Coordenadas V√©rtice 8 V8
 				};
 
 		glBindTexture(GL_TEXTURE_2D, textura[text].texID);
@@ -802,7 +816,7 @@ void dibujaCilindro(float radio, float alt, float repeticiones, int textura_num)
 
 	glEnable(GL_TEXTURE_2D);
 	
-	//Segundo ciclo: se calculan las normales por vÈrtice y se dibuja el cilindro usando las normales calculadas.
+	//Segundo ciclo: se calculan las normales por v√©rtice y se dibuja el cilindro usando las normales calculadas.
 	for(int i=0; i < lados; i++)
 	{
 		ang=i*delta;
@@ -825,7 +839,7 @@ void dibujaCilindro(float radio, float alt, float repeticiones, int textura_num)
 		d[1]=0.0f;
 		d[2]=c[2];
 
-		//C·lculo de normales por vÈrtice: se interpolan las normales de los planos adyacentes
+		//C√°lculo de normales por v√©rtice: se interpolan las normales de los planos adyacentes
 		if(i == 0)
 		{
 			Nv1=(NormalPlano[i]+NormalPlano[lados-1])/2.0f;
@@ -1266,7 +1280,7 @@ void dibujaFondo(){
 
 void dibujaEscenario(int render)
 {
-	if(render == 1)//sÛlido
+	if(render == 1)//s√≥lido
 		glPolygonMode(GL_FRONT,GL_FILL);
 	else if(render == 2)//alambrado
 		glPolygonMode(GL_FRONT,GL_LINE);
@@ -1327,7 +1341,7 @@ void dibujaEscenario(int render)
 	glDisable(GL_BLEND);
 
 	glDisable(GL_TEXTURE_2D);
-	//Al final de la funciÛn siempre se regresa al color blanco default de opengl
+	//Al final de la funci√≥n siempre se regresa al color blanco default de opengl
 	glColor3f(1.0f,1.0f,1.0f);
 }
 
@@ -1419,7 +1433,7 @@ void dibujaPersonaje()
 void DibujaLuz(CVector l)
 {
 	//Dibuja una esfera que representa la fuente luminosa
-	glDisable(GL_LIGHTING);				// Deshabilita iluminaciÛn
+	glDisable(GL_LIGHTING);				// Deshabilita iluminaci√≥n
 	
 	glPushMatrix();
 		glTranslatef(l.x, l.y, l.z);	// Traslada a la posicion de la luz
@@ -1429,7 +1443,7 @@ void DibujaLuz(CVector l)
 	glPopMatrix();
 
 
-	glEnable(GL_LIGHTING);				// Habilita IluminaciÛn
+	glEnable(GL_LIGHTING);				// Habilita Iluminaci√≥n
 	glColor3f(1.0f, 1.0f, 1.0f);
 }
 
@@ -1509,40 +1523,40 @@ GLvoid DestruyeVentanaOGL(GLvoid)						// Elimina la ventana apropiadamente
 	{
 		if (!wglMakeCurrent(NULL,NULL))					// Si no se pueden liberar los contextos DC y RC...
 		{
-			MessageBox(NULL,"Falla al liberar DC y RC.","Error de finalizaciÛn",MB_OK | MB_ICONINFORMATION);
+			MessageBox(NULL,"Falla al liberar DC y RC.","Error de finalizaci√≥n",MB_OK | MB_ICONINFORMATION);
 		}
 
 		if (!wglDeleteContext(hRC))						// Si no se puede eliminar el RC?
 		{
-			MessageBox(NULL,"Falla al liberar el contexto de renderizado.","Error de finalizaciÛn",MB_OK | MB_ICONINFORMATION);
+			MessageBox(NULL,"Falla al liberar el contexto de renderizado.","Error de finalizaci√≥n",MB_OK | MB_ICONINFORMATION);
 		}
 		hRC=NULL;										// Se pone RC en NULL
 	}
 
 	if (hDC && !ReleaseDC(hWnd,hDC))					// Si no se puede eliminar el DC
 	{
-		MessageBox(NULL,"Falla al liberar el contexto de renderizado.","Error de finalizaciÛn",MB_OK | MB_ICONINFORMATION);
+		MessageBox(NULL,"Falla al liberar el contexto de renderizado.","Error de finalizaci√≥n",MB_OK | MB_ICONINFORMATION);
 		hDC=NULL;										// Se pone DC en NULL
 	}
 
 	if (hWnd && !DestroyWindow(hWnd))					// Si no se puede destruir la ventana
 	{
-		MessageBox(NULL,"No se pudo liberar hWnd.","Error de finalizaciÛn",MB_OK | MB_ICONINFORMATION);
+		MessageBox(NULL,"No se pudo liberar hWnd.","Error de finalizaci√≥n",MB_OK | MB_ICONINFORMATION);
 		hWnd=NULL;										// Se pone hWnd en NULL
 	}
 
 	if (!UnregisterClass("OpenGL",hInstance))			// Si no se puede eliminar el registro de la clase
 	{
-		MessageBox(NULL,"No se pudo eliminar el registro de la clase.","Error de finalizaciÛn",MB_OK | MB_ICONINFORMATION);
+		MessageBox(NULL,"No se pudo eliminar el registro de la clase.","Error de finalizaci√≥n",MB_OK | MB_ICONINFORMATION);
 		hInstance=NULL;									// Se pone hInstance en NULL
 	}
 }
 
-//	Este cÛdigo crea la ventana de OpenGL.  Par·metros:					
+//	Este c√≥digo crea la ventana de OpenGL.  Par√°metros:					
 //	title			- Titulo en la parte superior de la ventana			
 //	width			- Ancho de la ventana								
 //	height			- Alto de la ventana								
-//	bits			- N˙mero de bits a usar para el color (8/16/24/32)	
+//	bits			- N√∫mero de bits a usar para el color (8/16/24/32)	
   
 BOOL CreaVentanaOGL(char* title, int width, int height, int bits)
 {
@@ -1550,7 +1564,7 @@ BOOL CreaVentanaOGL(char* title, int width, int height, int bits)
 	WNDCLASS	wc;						// Estructura de la clase ventana
 	DWORD		dwExStyle;				// Estilo extendido de ventana
 	DWORD		dwStyle;				// Estilo de ventana
-	RECT		WindowRect;				// Guarda los valores Superior Izquierdo / Inferior Derecho del rect·ngulo
+	RECT		WindowRect;				// Guarda los valores Superior Izquierdo / Inferior Derecho del rect√°ngulo
 	WindowRect.left=(long)0;			// Inicia el valor Izquierdo a 0
 	WindowRect.right=(long)width;		// Inicia el valor Derecho al ancho especificado
 	WindowRect.top=(long)0;				// Inicia el valor Superior a 0
@@ -1562,10 +1576,10 @@ BOOL CreaVentanaOGL(char* title, int width, int height, int bits)
 	wc.cbClsExtra		= 0;									// Ningun dato extra para la clase
 	wc.cbWndExtra		= 0;									// Ningun dato extra para la ventana
 	wc.hInstance		= hInstance;							// Inicia la instancia
-	wc.hIcon			= LoadIcon(NULL, IDI_WINLOGO);			// Carga el Ìcono por defecto
+	wc.hIcon			= LoadIcon(NULL, IDI_WINLOGO);			// Carga el √≠cono por defecto
 	wc.hCursor			= LoadCursor(NULL, IDC_ARROW);			// Carga el puntero de flecha
 	wc.hbrBackground	= NULL;									// No se requiere ningun fondo
-	wc.lpszMenuName		= NULL;									// No hay men˙ en la ventana
+	wc.lpszMenuName		= NULL;									// No hay men√∫ en la ventana
 	wc.lpszClassName	= "OpenGL";								// Fija el nombre de la clase.
 
 	if (!RegisterClass(&wc))									// Intenta registrar la clase de ventana
@@ -1577,20 +1591,20 @@ BOOL CreaVentanaOGL(char* title, int width, int height, int bits)
 	dwExStyle=WS_EX_APPWINDOW | WS_EX_WINDOWEDGE;					// Estilo extendido de ventana
 	dwStyle=WS_OVERLAPPEDWINDOW;									// Estilo de ventana
 
-	AdjustWindowRectEx(&WindowRect, dwStyle, FALSE, dwExStyle);		// Ajusta la ventana al tamaÒo especificado
+	AdjustWindowRectEx(&WindowRect, dwStyle, FALSE, dwExStyle);		// Ajusta la ventana al tama√±o especificado
 
 	// Crea la ventana
 	if (!(hWnd=CreateWindowEx(	dwExStyle,							// Estilo extendido para la ventana
 								"OpenGL",							// Nombre de la clase
-								title,								// TÌtulo de la ventana
-								dwStyle |							// DefiniciÛn del estilo de la ventana
+								title,								// T√≠tulo de la ventana
+								dwStyle |							// Definici√≥n del estilo de la ventana
 								WS_CLIPSIBLINGS |					// Estilo requerido de la ventana
 								WS_CLIPCHILDREN,					// Estilo requerido de la ventana
-								0, 0,								// PosiciÛn de la ventana
+								0, 0,								// Posici√≥n de la ventana
 								WindowRect.right-WindowRect.left,	// Calcula el ancho de la ventana
 								WindowRect.bottom-WindowRect.top,	// Calcula el alto de la ventana
 								NULL,								// No hay ventana superior
-								NULL,								// No hay men˙
+								NULL,								// No hay men√∫
 								hInstance,							// Instancia
 								NULL)))								// No se pasa nada a WM_CREATE
 	{
@@ -1628,7 +1642,7 @@ BOOL CreaVentanaOGL(char* title, int width, int height, int bits)
 		return FALSE;								
 	}
 
-	if (!(PixelFormat=ChoosePixelFormat(hDC,&pfd)))	// Si Windows no encontrÛ un formato de pixel compatible
+	if (!(PixelFormat=ChoosePixelFormat(hDC,&pfd)))	// Si Windows no encontr√≥ un formato de pixel compatible
 	{
 		DestruyeVentanaOGL();						// Resetea el despliegue
 		MessageBox(NULL,"No se puede encontrar un formato de pixel compatible.","ERROR",MB_OK|MB_ICONEXCLAMATION);
@@ -1664,7 +1678,7 @@ BOOL CreaVentanaOGL(char* title, int width, int height, int bits)
 	if (!IniGL())							// Si no se inicializa la ventana creada
 	{
 		DestruyeVentanaOGL();				// Resetea el despliegue
-		MessageBox(NULL,"Falla en la inicializaciÛn.","ERROR",MB_OK|MB_ICONEXCLAMATION);
+		MessageBox(NULL,"Falla en la inicializaci√≥n.","ERROR",MB_OK|MB_ICONEXCLAMATION);
 		return FALSE;								
 	}
 
@@ -1673,20 +1687,20 @@ BOOL CreaVentanaOGL(char* title, int width, int height, int bits)
 
 LRESULT CALLBACK WndProc(	HWND	hWnd,	// Manejador para esta ventana
 							UINT	uMsg,	// Mensaje para esta ventana
-							WPARAM	wParam,	// InformaciÛn adicional del mensaje
-							LPARAM	lParam)	// InformaciÛn adicional del mensaje
+							WPARAM	wParam,	// Informaci√≥n adicional del mensaje
+							LPARAM	lParam)	// Informaci√≥n adicional del mensaje
 {
 	switch (uMsg)							// Revisa los mensajes de la ventana
 	{
-		case WM_ACTIVATE:					// Revisa el mensaje de activaciÛn de ventana
+		case WM_ACTIVATE:					// Revisa el mensaje de activaci√≥n de ventana
 		{
-			if (!HIWORD(wParam))			// Revisa el estado de minimizaciÛn
+			if (!HIWORD(wParam))			// Revisa el estado de minimizaci√≥n
 			{
-				active=TRUE;				// El programa est· activo
+				active=TRUE;				// El programa est√° activo
 			}
 			else
 			{
-				active=FALSE;				// El programa no est· activo
+				active=FALSE;				// El programa no est√° activo
 			}
 
 			return 0;						// Regresa al ciclo de mensajes
@@ -1696,8 +1710,8 @@ LRESULT CALLBACK WndProc(	HWND	hWnd,	// Manejador para esta ventana
 		{
 			switch (wParam)					// Revisa llamadas del sistema
 			{
-				case SC_SCREENSAVE:			// øScreensaver tratando de iniciar?
-				case SC_MONITORPOWER:		// øMonitor tratando de entrar a modo de ahorro de energÌa?
+				case SC_SCREENSAVE:			// ¬øScreensaver tratando de iniciar?
+				case SC_MONITORPOWER:		// ¬øMonitor tratando de entrar a modo de ahorro de energ√≠a?
 				return 0;					// Evita que suceda
 			}
 			break;							// Sale del caso
@@ -1709,15 +1723,15 @@ LRESULT CALLBACK WndProc(	HWND	hWnd,	// Manejador para esta ventana
 			return 0;						// y se regresa al ciclo
 		}
 
-		case WM_KEYDOWN:					// Si se est· presionando una tecla...
+		case WM_KEYDOWN:					// Si se est√° presionando una tecla...
 		{
-			keys[wParam] = TRUE;			// Si es asÌ, se marca como TRUE
+			keys[wParam] = TRUE;			// Si es as√≠, se marca como TRUE
 			return 0;						// y se regresa al ciclo
 		}
 
-		case WM_KEYUP:						// øSe ha soltado una tecla?
+		case WM_KEYUP:						// ¬øSe ha soltado una tecla?
 		{
-			keys[wParam] = FALSE;			// Si es asÌ, se marca como FALSE
+			keys[wParam] = FALSE;			// Si es as√≠, se marca como FALSE
 			return 0;						// y se regresa al ciclo
 		}
 
@@ -1732,7 +1746,7 @@ LRESULT CALLBACK WndProc(	HWND	hWnd,	// Manejador para esta ventana
 	return DefWindowProc(hWnd,uMsg,wParam,lParam);
 }
 
-// Este es el punto de entrada al programa; la funciÛn principal 
+// Este es el punto de entrada al programa; la funci√≥n principal 
 int WINAPI WinMain(	HINSTANCE	hInstance,			// Instancia
 					HINSTANCE	hPrevInstance,		// Instancia previa
 					LPSTR		lpCmdLine,			// Parametros de la linea de comandos
@@ -1742,7 +1756,7 @@ int WINAPI WinMain(	HINSTANCE	hInstance,			// Instancia
 	BOOL	done=FALSE;								// Variable booleana para salir del ciclo
 
 	// Crea la ventana OpenGL
-	if (!CreaVentanaOGL("Proyecto de ComputaciÛn Gr·fica",640,480,16))
+	if (!CreaVentanaOGL("Proyecto de Computaci√≥n Gr√°fica",640,480,16))
 	{
 		return 0;									// Salir del programa si la ventana no fue creada
 	}
@@ -1764,7 +1778,7 @@ int WINAPI WinMain(	HINSTANCE	hInstance,			// Instancia
 		else										// Si no hay mensajes...
 		{
 			// Dibuja la escena. 
-			if (active)								// Si est· activo el programa...
+			if (active)								// Si est√° activo el programa...
 			{
 				if (keys[VK_ESCAPE])				// Si se ha presionado ESC
 				{
@@ -1787,7 +1801,7 @@ int WINAPI WinMain(	HINSTANCE	hInstance,			// Instancia
 		}
 	}
 
-	// FinalizaciÛn del programa
+	// Finalizaci√≥n del programa
 	DescargaTexturas();
 	DescargaModelos();
 	DestruyeVentanaOGL();							// Destruye la ventana
@@ -1796,32 +1810,28 @@ int WINAPI WinMain(	HINSTANCE	hInstance,			// Instancia
 
 int ManejaTeclado()
 {
-	if(GetKeyState(VK_UP) & 0x80) //Si est· presionada la tecla UP
+	if(GetKeyState(VK_UP) & 0x80) //Si est√° presionada la tecla UP
 	{
-		PosCam.y+=0.5f;
-		ObjCam.y+=0.5f;
-		player1.PosicionObj.y+=0.5f;
+		movimientoPersonaje(4);
 	}
 
-	if(GetKeyState('L') & 0x80) //Si est· presionada la tecla DOWN
+	if(GetKeyState('L') & 0x80) //Si est√° presionada la tecla DOWN
 	{
-		PosCam.y-=0.5f;
-		ObjCam.y-=0.5f;
-		player1.PosicionObj.y-=0.5f;
+		movimientoPersonaje(3);
 	}
 
-	if(GetKeyState(VK_LEFT) & 0x80) //Si est· presionada la tecla LEFT
+	if(GetKeyState(VK_LEFT) & 0x80) //Si est√° presionada la tecla LEFT
 	{
 		movimientoPersonaje(2);
 		player1.caminando=true;
 		
-		if(varsAnimP1.tipoAnim != 2 && varsAnimP1.play==false) //Para que la asignaciÛn de valores siguiente solo se haga una vez y empiece la animaciÛn
+		if(varsAnimP1.tipoAnim != 2 && varsAnimP1.play==false) //Para que la asignaci√≥n de valores siguiente solo se haga una vez y empiece la animaci√≥n
 		{
 			if(player1.disparando == false)
 			{
 				//Se le asignan a las variables del personaje los 
 				//valores almacenados en el primer keyframe para que
-				//inicie desde ahÌ la animaciÛn.
+				//inicie desde ah√≠ la animaci√≥n.
 				player1modelo.Angtx     = KeyFrame1p1[0].Angtx;
 				player1modelo.Angty     = KeyFrame1p1[0].Angty;
 				player1modelo.Angcx     = KeyFrame1p1[0].Angcx;
@@ -1856,18 +1866,18 @@ int ManejaTeclado()
 		}
 	}
 
-	if(GetKeyState(VK_RIGHT) & 0x80) //Si est· presionada la tecla RIGHT
+	if(GetKeyState(VK_RIGHT) & 0x80) //Si est√° presionada la tecla RIGHT
 	{
 		movimientoPersonaje(1);
 		player1.caminando=true;
 			
-		if(varsAnimP1.tipoAnim != 2 && varsAnimP1.play==false) //Para que la asignaciÛn de valores siguiente solo se haga una vez y empiece la animaciÛn
+		if(varsAnimP1.tipoAnim != 2 && varsAnimP1.play==false) //Para que la asignaci√≥n de valores siguiente solo se haga una vez y empiece la animaci√≥n
 		{
 			if(player1.disparando == false)
 			{
 				//Se le asignan a las variables del personaje los 
 				//valores almacenados en el primer keyframe para que
-				//inicie desde ahÌ la animaciÛn.
+				//inicie desde ah√≠ la animaci√≥n.
 				player1modelo.Angtx     = KeyFrame1p1[0].Angtx;
 				player1modelo.Angty     = KeyFrame1p1[0].Angty;
 				player1modelo.Angcx     = KeyFrame1p1[0].Angcx;
@@ -1969,10 +1979,10 @@ int ManejaTeclado()
 		}
 	}
 
-	//Para que al soltar la tecla presionada el personaje no quede en una posiciÛn
-	//intermedia de la animaciÛn se asignan los valores originales a las variables
+	//Para que al soltar la tecla presionada el personaje no quede en una posici√≥n
+	//intermedia de la animaci√≥n se asignan los valores originales a las variables
 	if(!(GetKeyState(VK_UP) & 0x80 || GetKeyState(VK_DOWN) & 0x80
-	|| GetKeyState(VK_LEFT) & 0x80 || GetKeyState(VK_RIGHT) & 0x80)) //Si no est· presionada alguna de esas teclas
+	|| GetKeyState(VK_LEFT) & 0x80 || GetKeyState(VK_RIGHT) & 0x80)) //Si no est√° presionada alguna de esas teclas
 	{
 		if(varsAnimP1.tipoAnim == 1)
 		{
@@ -2010,7 +2020,7 @@ int ManejaTeclado()
 
 	}
 
-	//Controles de la iluminaciÛn
+	//Controles de la iluminaci√≥n
 	if (keys['Q'])
 		LightPos[0] += 1.0f; //Hacia la derecha
 
@@ -2027,7 +2037,7 @@ int ManejaTeclado()
 		LightPos[2] += 1.0f; //Hacia adelante
 
 	if (keys['Y'])
-		LightPos[2] -= 1.0f; //Hacia atr·s
+		LightPos[2] -= 1.0f; //Hacia atr√°s
 
 	if (keys['H'])
 		rota += 1.0f; //Hacia la derecha

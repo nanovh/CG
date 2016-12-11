@@ -4136,6 +4136,1001 @@ glEnable(GL_TEXTURE_2D);
 	glDisable(GL_TEXTURE_2D);
 }
 
+void dibujaEdificio6(){
+
+
+	//PARED DELANTERA INICIO	
+
+		//pared-delantera-superior
+		glBegin(GL_QUADS);
+			glColor3f(0.35f,0.f,0.0f);
+			glNormal3f(0.0f,0.0f,1.0f);
+			glVertex3f(0.0f, 90.0f,0.0f);
+			glVertex3f(250.0f,90.0f,0.0f);
+			glVertex3f(250.0f,110.0f,0.0f);
+			glVertex3f(0.0f,110.0f,0.0f);
+		glEnd();
+
+		//poste izquierdo INICIO
+
+			//plano delantero
+			glBegin(GL_QUADS);
+				glColor3f(0.99f,0.85f,0.65f);
+				glNormal3f(0.0f,0.0f,1.0f);
+				glVertex3f(0.0f,  0.0f,2.0f);
+				glVertex3f(8.0f,  0.0f,2.0f);
+				glVertex3f(8.0f,110.0f,2.0f);
+				glVertex3f(0.0f,110.0f,2.0f);
+			glEnd();
+
+			//plano izquierdo
+			glBegin(GL_QUADS);
+				glColor3f(0.99f,0.77f,0.48f);
+				glNormal3f(1.0f,0.0f,0.0f);
+				glVertex3f(0.0f,  0.0f,0.0f);
+				glVertex3f(0.0f,  0.0f,2.0f);
+				glVertex3f(0.0f,110.0f,2.0f);
+				glVertex3f(0.0f,110.0f,0.0f);
+			glEnd();
+
+			//plano derecho
+			glBegin(GL_QUADS);
+				glColor3f(0.99f,0.77f,0.48f);
+				glNormal3f(1.0f,0.0f,0.0f);
+				glVertex3f(8.0f,  0.0f,2.0f);
+				glVertex3f(8.0f,  0.0f,0.0f);
+				glVertex3f(8.0f,110.0f,0.0f);
+				glVertex3f(8.0f,110.0f,2.0f);
+			glEnd();
+
+		//poste izquierdo FIN
+
+		//poste derecho INICIO
+
+			//plano delantero
+			glBegin(GL_QUADS);
+				glColor3f(0.99f,0.85f,0.65f);
+				glNormal3f(0.0f,0.0f,1.0f);
+				glVertex3f(242.0f,  0.0f,2.0f);
+				glVertex3f(250.0f,  0.0f,2.0f);
+				glVertex3f(250.0f,110.0f,2.0f);
+				glVertex3f(242.0f,110.0f,2.0f);
+			glEnd();
+
+			//plano izquierdo
+			glBegin(GL_QUADS);
+				glColor3f(0.99f,0.77f,0.48f);
+				glNormal3f(1.0f,0.0f,0.0f);
+				glVertex3f(242.0f,  0.0f,0.0f);
+				glVertex3f(242.0f,  0.0f,2.0f);
+				glVertex3f(242.0f,110.0f,2.0f);
+				glVertex3f(242.0f,110.0f,0.0f);
+			glEnd();
+
+			//plano derecho
+			glBegin(GL_QUADS);
+				glColor3f(0.99f,0.77f,0.48f);
+				glNormal3f(1.0f,0.0f,0.0f);
+				glVertex3f(250.0f,  0.0f,2.0f);
+				glVertex3f(250.0f,  0.0f,0.0f);
+				glVertex3f(250.0f,110.0f,0.0f);
+				glVertex3f(250.0f,110.0f,2.0f);
+			glEnd();
+
+		//poste derecho FIN
+
+		//pared-delantera-superior-2
+		glBegin(GL_QUADS);
+			glColor3f(0.99f,0.9f,0.73f);
+			glNormal3f(0.0f,0.0f,1.0f);
+			glVertex3f(  8.0f, 80.0f,0.0f);
+			glVertex3f(242.0f, 80.0f,0.0f);
+			glVertex3f(242.0f, 90.0f,0.0f);
+			glVertex3f(  8.0f, 90.0f,0.0f);
+		glEnd();
+
+		//pared delantera central INICIO
+
+			//superior
+			glBegin(GL_QUADS);
+				glColor3f(0.9f,0.9f,0.9f);
+				glNormal3f(0.0f,0.0f,1.0f);
+				glVertex3f(  8.0f, 70.0f,0.0f);
+				glVertex3f(242.0f, 70.0f,0.0f);
+				glVertex3f(242.0f, 80.0f,0.0f);
+				glVertex3f(  8.0f, 80.0f,0.0f);
+			glEnd();
+
+			//izquierda
+			glBegin(GL_QUADS);
+				glColor3f(0.9f,0.9f,0.9f);
+				glNormal3f(0.0f,0.0f,1.0f);
+				glVertex3f(  8.0f, 10.0f,0.0f);
+				glVertex3f( 22.0f, 10.0f,0.0f);
+				glVertex3f( 22.0f, 70.0f,0.0f);
+				glVertex3f(  8.0f, 70.0f,0.0f);
+			glEnd();
+
+			//central 1 
+			glBegin(GL_QUADS);
+				glColor3f(0.9f,0.9f,0.9f);
+				glNormal3f(0.0f,0.0f,1.0f);
+				glVertex3f( 53.0f, 10.0f,0.0f);
+				glVertex3f( 63.0f, 10.0f,0.0f);
+				glVertex3f( 63.0f, 70.0f,0.0f);
+				glVertex3f( 53.0f, 70.0f,0.0f);
+			glEnd();
+
+			//central 2 
+			glBegin(GL_QUADS);
+				glColor3f(0.9f,0.9f,0.9f);
+				glNormal3f(0.0f,0.0f,1.0f);
+				glVertex3f( 88.0f, 10.0f,0.0f);
+				glVertex3f(108.0f, 10.0f,0.0f);
+				glVertex3f(108.0f, 70.0f,0.0f);
+				glVertex3f( 88.0f, 70.0f,0.0f);
+			glEnd();
+
+			//central 3 
+			glBegin(GL_QUADS);
+				glColor3f(0.9f,0.9f,0.9f);
+				glNormal3f(0.0f,0.0f,1.0f);
+				glVertex3f(133.0f, 10.0f,0.0f);
+				glVertex3f(153.0f, 10.0f,0.0f);
+				glVertex3f(153.0f, 70.0f,0.0f);
+				glVertex3f(133.0f, 70.0f,0.0f);
+			glEnd();
+
+			//central 4
+			glBegin(GL_QUADS);
+				glColor3f(0.9f,0.9f,0.9f);
+				glNormal3f(0.0f,0.0f,1.0f);
+				glVertex3f(178.0f, 10.0f,0.0f);
+				glVertex3f(198.0f, 10.0f,0.0f);
+				glVertex3f(198.0f, 70.0f,0.0f);
+				glVertex3f(178.0f, 70.0f,0.0f);
+			glEnd();
+
+			//derecha
+			glBegin(GL_QUADS);
+				glColor3f(0.9f,0.9f,0.9f);
+				glNormal3f(0.0f,0.0f,1.0f);
+				glVertex3f(223.0f, 10.0f,0.0f);
+				glVertex3f(242.0f, 10.0f,0.0f);
+				glVertex3f(242.0f, 70.0f,0.0f);
+				glVertex3f(223.0f, 70.0f,0.0f);
+			glEnd();
+
+			//interior INICIO
+
+				//delantera
+				glBegin(GL_QUADS);
+					glColor3f(0.0f,0.0f,0.5f);
+					glNormal3f(0.0f,0.0f,1.0f);
+					glVertex3f(22.0f,  8.0f,-8.0f);
+					glVertex3f(53.0f,  8.0f,-8.0f);
+					glVertex3f(53.0f, 70.0f,-8.0f);
+					glVertex3f(22.0f, 70.0f,-8.0f);
+				glEnd();
+
+				//izquierda
+				glBegin(GL_QUADS);
+					glColor3f(0.5f,0.0f,0.0f);
+					glNormal3f(1.0f,0.0f,0.0f);
+					glVertex3f(22.0f, 10.0f, 1.0f);
+					glVertex3f(22.0f, 10.0f,-8.0f);
+					glVertex3f(22.0f, 70.0f,-8.0f);
+					glVertex3f(22.0f, 70.0f, 1.0f);
+				glEnd();
+
+				//derecha
+				glBegin(GL_QUADS);
+					glColor3f(0.5f,0.0f,0.0f);
+					glNormal3f(1.0f,0.0f,0.0f);
+					glVertex3f(53.0f, 10.0f,-8.0f);
+					glVertex3f(53.0f, 10.0f, 1.0f);
+					glVertex3f(53.0f, 70.0f, 1.0f);
+					glVertex3f(53.0f, 70.0f,-8.0f);
+				glEnd();
+
+				//superior
+				glBegin(GL_QUADS);
+					glColor3f(0.5f,0.0f,0.0f);
+					glNormal3f(0.0f,1.0f,0.0f);
+					glVertex3f(53.0f, 70.0f, 1.0f);
+					glVertex3f(22.0f, 70.0f, 1.0f);
+					glVertex3f(22.0f, 70.0f,-8.0f);
+					glVertex3f(53.0f, 70.0f,-8.0f);
+				glEnd();
+
+			//interior FIN
+
+			//ventana 1 INICIO
+
+				//ventana
+				glBegin(GL_QUADS);
+					glColor3f(0.5f,0.5f,0.5f);
+					glNormal3f(0.0f,0.0f,1.0f);
+					glVertex3f( 63.0f, 23.0f,0.0f);
+					glVertex3f( 88.0f, 23.0f,0.0f);
+					glVertex3f( 88.0f, 70.0f,0.0f);
+					glVertex3f( 63.0f, 70.0f,0.0f);
+				glEnd();
+
+				//maceta INICIO
+
+					//delantera
+					glBegin(GL_QUADS);
+						glColor3f(1.0f,0.8f,0.8f);
+						glNormal3f(0.0f,0.0f,1.0f);
+						glVertex3f( 63.0f, 20.0f,5.0f);
+						glVertex3f( 88.0f, 20.0f,5.0f);
+						glVertex3f( 88.0f, 25.0f,5.0f);
+						glVertex3f( 63.0f, 25.0f,5.0f);
+					glEnd();
+
+					//izquierda
+					glBegin(GL_QUADS);
+						glColor3f(1.0f,0.69f,0.69f);
+						glNormal3f(1.0f,0.0f,0.0f);
+						glVertex3f( 63.0f, 20.0f,0.0f);
+						glVertex3f( 63.0f, 20.0f,5.0f);
+						glVertex3f( 63.0f, 25.0f,5.0f);
+						glVertex3f( 63.0f, 25.0f,0.0f);
+					glEnd();
+
+					//izquierda 2
+					glBegin(GL_QUADS);
+						glColor3f(1.0f,0.69f,0.69f);
+						glNormal3f(1.0f,0.0f,0.0f);
+						glVertex3f( 63.0f, 20.0f,5.0f);
+						glVertex3f( 63.0f, 20.0f,0.0f);
+						glVertex3f( 63.0f, 25.0f,0.0f);
+						glVertex3f( 63.0f, 25.0f,5.0f);
+					glEnd();
+
+					//derecha 
+					glBegin(GL_QUADS);
+						glColor3f(1.0f,0.69f,0.69f);
+						glNormal3f(1.0f,0.0f,0.0f);
+						glVertex3f( 88.0f, 20.0f,5.0f);
+						glVertex3f( 88.0f, 20.0f,0.0f);
+						glVertex3f( 88.0f, 25.0f,0.0f);
+						glVertex3f( 88.0f, 25.0f,5.0f);
+					glEnd();
+
+					//derecha 2
+					glBegin(GL_QUADS);
+						glColor3f(1.0f,0.69f,0.69f);
+						glNormal3f(1.0f,0.0f,0.0f);
+						glVertex3f( 88.0f, 20.0f,0.0f);
+						glVertex3f( 88.0f, 20.0f,5.0f);
+						glVertex3f( 88.0f, 25.0f,5.0f);
+						glVertex3f( 88.0f, 25.0f,0.0f);
+					glEnd();
+				//maceta FIN
+
+				//carpa INICIO
+
+					//delantera
+					glBegin(GL_QUADS);
+						glColor3f(0.67f,1.0f,0.35f);
+						vec1=CVector(25.0f,  0.0f,0.0f);
+						vec2=CVector(0.0f, 10.0f,-5.0f);
+						N=Normaliza(Cruz(vec1,vec2));
+						glNormal3f(N.x,N.y,N.z);
+						glVertex3f( 63.0f, 60.0f,5.0f);
+						glVertex3f( 88.0f, 60.0f,5.0f);
+						glVertex3f( 88.0f, 70.0f,0.0f);
+						glVertex3f( 63.0f, 70.0f,0.0f);
+					glEnd();
+
+					//izquierda
+					glBegin(GL_TRIANGLES);
+						glColor3f(0.56f,1.0f,0.12f);
+						glNormal3f(1.0f,0.0f,0.0f);
+						glVertex3f( 63.0f, 60.0f,0.0f);
+						glVertex3f( 63.0f, 60.0f,5.0f);
+						glVertex3f( 63.0f, 70.0f,0.0f);
+					glEnd();
+
+					//derecha
+					glBegin(GL_TRIANGLES);
+						glColor3f(0.56f,1.0f,0.12f);
+						glNormal3f(1.0f,0.0f,0.0f);
+						glVertex3f( 88.0f, 60.0f,5.0f);
+						glVertex3f( 88.0f, 60.0f,0.0f);
+						glVertex3f( 88.0f, 70.0f,0.0f);
+					glEnd();
+
+				//carpa FIN
+			
+			//ventana 1 FIN
+
+			//ventana 2 INICIO
+			glPushMatrix();
+			glTranslatef(45.0f,0.0f,0.0f);
+
+				//ventana
+				glBegin(GL_QUADS);
+					glColor3f(0.5f,0.5f,0.5f);
+					glNormal3f(0.0f,0.0f,1.0f);
+					glVertex3f( 63.0f, 23.0f,0.0f);
+					glVertex3f( 88.0f, 23.0f,0.0f);
+					glVertex3f( 88.0f, 70.0f,0.0f);
+					glVertex3f( 63.0f, 70.0f,0.0f);
+				glEnd();
+
+				//maceta INICIO
+
+					//delantera
+					glBegin(GL_QUADS);
+						glColor3f(1.0f,0.8f,0.8f);
+						glNormal3f(0.0f,0.0f,1.0f);
+						glVertex3f( 63.0f, 20.0f,5.0f);
+						glVertex3f( 88.0f, 20.0f,5.0f);
+						glVertex3f( 88.0f, 25.0f,5.0f);
+						glVertex3f( 63.0f, 25.0f,5.0f);
+					glEnd();
+
+					//izquierda
+					glBegin(GL_QUADS);
+						glColor3f(1.0f,0.69f,0.69f);
+						glNormal3f(1.0f,0.0f,0.0f);
+						glVertex3f( 63.0f, 20.0f,0.0f);
+						glVertex3f( 63.0f, 20.0f,5.0f);
+						glVertex3f( 63.0f, 25.0f,5.0f);
+						glVertex3f( 63.0f, 25.0f,0.0f);
+					glEnd();
+
+					//izquierda 2
+					glBegin(GL_QUADS);
+						glColor3f(1.0f,0.69f,0.69f);
+						glNormal3f(1.0f,0.0f,0.0f);
+						glVertex3f( 63.0f, 20.0f,5.0f);
+						glVertex3f( 63.0f, 20.0f,0.0f);
+						glVertex3f( 63.0f, 25.0f,0.0f);
+						glVertex3f( 63.0f, 25.0f,5.0f);
+					glEnd();
+
+					//derecha 
+					glBegin(GL_QUADS);
+						glColor3f(1.0f,0.69f,0.69f);
+						glNormal3f(1.0f,0.0f,0.0f);
+						glVertex3f( 88.0f, 20.0f,5.0f);
+						glVertex3f( 88.0f, 20.0f,0.0f);
+						glVertex3f( 88.0f, 25.0f,0.0f);
+						glVertex3f( 88.0f, 25.0f,5.0f);
+					glEnd();
+
+					//derecha 2
+					glBegin(GL_QUADS);
+						glColor3f(1.0f,0.69f,0.69f);
+						glNormal3f(1.0f,0.0f,0.0f);
+						glVertex3f( 88.0f, 20.0f,0.0f);
+						glVertex3f( 88.0f, 20.0f,5.0f);
+						glVertex3f( 88.0f, 25.0f,5.0f);
+						glVertex3f( 88.0f, 25.0f,0.0f);
+					glEnd();
+				//maceta FIN
+
+				//carpa INICIO
+
+					//delantera
+					glBegin(GL_QUADS);
+						glColor3f(0.67f,1.0f,0.35f);
+						vec1=CVector(25.0f,  0.0f,0.0f);
+						vec2=CVector(0.0f, 10.0f,-5.0f);
+						N=Normaliza(Cruz(vec1,vec2));
+						glNormal3f(N.x,N.y,N.z);
+						glVertex3f( 63.0f, 60.0f,5.0f);
+						glVertex3f( 88.0f, 60.0f,5.0f);
+						glVertex3f( 88.0f, 70.0f,0.0f);
+						glVertex3f( 63.0f, 70.0f,0.0f);
+					glEnd();
+
+					//izquierda
+					glBegin(GL_TRIANGLES);
+						glColor3f(0.56f,1.0f,0.12f);
+						glNormal3f(1.0f,0.0f,0.0f);
+						glVertex3f( 63.0f, 60.0f,0.0f);
+						glVertex3f( 63.0f, 60.0f,5.0f);
+						glVertex3f( 63.0f, 70.0f,0.0f);
+					glEnd();
+
+					//derecha
+					glBegin(GL_TRIANGLES);
+						glColor3f(0.56f,1.0f,0.12f);
+						glNormal3f(1.0f,0.0f,0.0f);
+						glVertex3f( 88.0f, 60.0f,5.0f);
+						glVertex3f( 88.0f, 60.0f,0.0f);
+						glVertex3f( 88.0f, 70.0f,0.0f);
+					glEnd();
+
+				//carpa FIN
+			glPopMatrix(); 
+			//ventana 2 FIN
+
+			//ventana 3 INICIO
+			glPushMatrix();
+			glTranslatef(90.0f,0.0f,0.0f);
+
+				//ventana
+				glBegin(GL_QUADS);
+					glColor3f(0.5f,0.5f,0.5f);
+					glNormal3f(0.0f,0.0f,1.0f);
+					glVertex3f( 63.0f, 23.0f,0.0f);
+					glVertex3f( 88.0f, 23.0f,0.0f);
+					glVertex3f( 88.0f, 70.0f,0.0f);
+					glVertex3f( 63.0f, 70.0f,0.0f);
+				glEnd();
+
+				//maceta INICIO
+
+					//delantera
+					glBegin(GL_QUADS);
+						glColor3f(1.0f,0.8f,0.8f);
+						glNormal3f(0.0f,0.0f,1.0f);
+						glVertex3f( 63.0f, 20.0f,5.0f);
+						glVertex3f( 88.0f, 20.0f,5.0f);
+						glVertex3f( 88.0f, 25.0f,5.0f);
+						glVertex3f( 63.0f, 25.0f,5.0f);
+					glEnd();
+
+					//izquierda
+					glBegin(GL_QUADS);
+						glColor3f(1.0f,0.69f,0.69f);
+						glNormal3f(1.0f,0.0f,0.0f);
+						glVertex3f( 63.0f, 20.0f,0.0f);
+						glVertex3f( 63.0f, 20.0f,5.0f);
+						glVertex3f( 63.0f, 25.0f,5.0f);
+						glVertex3f( 63.0f, 25.0f,0.0f);
+					glEnd();
+
+					//izquierda 2
+					glBegin(GL_QUADS);
+						glColor3f(1.0f,0.69f,0.69f);
+						glNormal3f(1.0f,0.0f,0.0f);
+						glVertex3f( 63.0f, 20.0f,5.0f);
+						glVertex3f( 63.0f, 20.0f,0.0f);
+						glVertex3f( 63.0f, 25.0f,0.0f);
+						glVertex3f( 63.0f, 25.0f,5.0f);
+					glEnd();
+
+					//derecha 
+					glBegin(GL_QUADS);
+						glColor3f(1.0f,0.69f,0.69f);
+						glNormal3f(1.0f,0.0f,0.0f);
+						glVertex3f( 88.0f, 20.0f,5.0f);
+						glVertex3f( 88.0f, 20.0f,0.0f);
+						glVertex3f( 88.0f, 25.0f,0.0f);
+						glVertex3f( 88.0f, 25.0f,5.0f);
+					glEnd();
+
+					//derecha 2
+					glBegin(GL_QUADS);
+						glColor3f(1.0f,0.69f,0.69f);
+						glNormal3f(1.0f,0.0f,0.0f);
+						glVertex3f( 88.0f, 20.0f,0.0f);
+						glVertex3f( 88.0f, 20.0f,5.0f);
+						glVertex3f( 88.0f, 25.0f,5.0f);
+						glVertex3f( 88.0f, 25.0f,0.0f);
+					glEnd();
+				//maceta FIN
+
+				//carpa INICIO
+
+					//delantera
+					glBegin(GL_QUADS);
+						glColor3f(0.67f,1.0f,0.35f);
+						vec1=CVector(25.0f,  0.0f,0.0f);
+						vec2=CVector(0.0f, 10.0f,-5.0f);
+						N=Normaliza(Cruz(vec1,vec2));
+						glNormal3f(N.x,N.y,N.z);
+						glVertex3f( 63.0f, 60.0f,5.0f);
+						glVertex3f( 88.0f, 60.0f,5.0f);
+						glVertex3f( 88.0f, 70.0f,0.0f);
+						glVertex3f( 63.0f, 70.0f,0.0f);
+					glEnd();
+
+					//izquierda
+					glBegin(GL_TRIANGLES);
+						glColor3f(0.56f,1.0f,0.12f);
+						glNormal3f(1.0f,0.0f,0.0f);
+						glVertex3f( 63.0f, 60.0f,0.0f);
+						glVertex3f( 63.0f, 60.0f,5.0f);
+						glVertex3f( 63.0f, 70.0f,0.0f);
+					glEnd();
+
+					//derecha
+					glBegin(GL_TRIANGLES);
+						glColor3f(0.56f,1.0f,0.12f);
+						glNormal3f(1.0f,0.0f,0.0f);
+						glVertex3f( 88.0f, 60.0f,5.0f);
+						glVertex3f( 88.0f, 60.0f,0.0f);
+						glVertex3f( 88.0f, 70.0f,0.0f);
+					glEnd();
+
+				//carpa FIN
+			glPopMatrix(); 
+			//ventana 3 FIN
+
+			//ventana 4 INICIO
+			glPushMatrix();
+			glTranslatef(135.0f,0.0f,0.0f);
+
+				//ventana
+				glBegin(GL_QUADS);
+					glColor3f(0.5f,0.5f,0.5f);
+					glNormal3f(0.0f,0.0f,1.0f);
+					glVertex3f( 63.0f, 23.0f,0.0f);
+					glVertex3f( 88.0f, 23.0f,0.0f);
+					glVertex3f( 88.0f, 70.0f,0.0f);
+					glVertex3f( 63.0f, 70.0f,0.0f);
+				glEnd();
+
+				//maceta INICIO
+
+					//delantera
+					glBegin(GL_QUADS);
+						glColor3f(1.0f,0.8f,0.8f);
+						glNormal3f(0.0f,0.0f,1.0f);
+						glVertex3f( 63.0f, 20.0f,5.0f);
+						glVertex3f( 88.0f, 20.0f,5.0f);
+						glVertex3f( 88.0f, 25.0f,5.0f);
+						glVertex3f( 63.0f, 25.0f,5.0f);
+					glEnd();
+
+					//izquierda
+					glBegin(GL_QUADS);
+						glColor3f(1.0f,0.69f,0.69f);
+						glNormal3f(1.0f,0.0f,0.0f);
+						glVertex3f( 63.0f, 20.0f,0.0f);
+						glVertex3f( 63.0f, 20.0f,5.0f);
+						glVertex3f( 63.0f, 25.0f,5.0f);
+						glVertex3f( 63.0f, 25.0f,0.0f);
+					glEnd();
+
+					//izquierda 2
+					glBegin(GL_QUADS);
+						glColor3f(1.0f,0.69f,0.69f);
+						glNormal3f(1.0f,0.0f,0.0f);
+						glVertex3f( 63.0f, 20.0f,5.0f);
+						glVertex3f( 63.0f, 20.0f,0.0f);
+						glVertex3f( 63.0f, 25.0f,0.0f);
+						glVertex3f( 63.0f, 25.0f,5.0f);
+					glEnd();
+
+					//derecha 
+					glBegin(GL_QUADS);
+						glColor3f(1.0f,0.69f,0.69f);
+						glNormal3f(1.0f,0.0f,0.0f);
+						glVertex3f( 88.0f, 20.0f,5.0f);
+						glVertex3f( 88.0f, 20.0f,0.0f);
+						glVertex3f( 88.0f, 25.0f,0.0f);
+						glVertex3f( 88.0f, 25.0f,5.0f);
+					glEnd();
+
+					//derecha 2
+					glBegin(GL_QUADS);
+						glColor3f(1.0f,0.69f,0.69f);
+						glNormal3f(1.0f,0.0f,0.0f);
+						glVertex3f( 88.0f, 20.0f,0.0f);
+						glVertex3f( 88.0f, 20.0f,5.0f);
+						glVertex3f( 88.0f, 25.0f,5.0f);
+						glVertex3f( 88.0f, 25.0f,0.0f);
+					glEnd();
+				//maceta FIN
+
+				//carpa INICIO
+
+					//delantera
+					glBegin(GL_QUADS);
+						glColor3f(0.67f,1.0f,0.35f);
+						vec1=CVector(25.0f,  0.0f,0.0f);
+						vec2=CVector(0.0f, 10.0f,-5.0f);
+						N=Normaliza(Cruz(vec1,vec2));
+						glNormal3f(N.x,N.y,N.z);
+						glVertex3f( 63.0f, 60.0f,5.0f);
+						glVertex3f( 88.0f, 60.0f,5.0f);
+						glVertex3f( 88.0f, 70.0f,0.0f);
+						glVertex3f( 63.0f, 70.0f,0.0f);
+					glEnd();
+
+					//izquierda
+					glBegin(GL_TRIANGLES);
+						glColor3f(0.56f,1.0f,0.12f);
+						glNormal3f(1.0f,0.0f,0.0f);
+						glVertex3f( 63.0f, 60.0f,0.0f);
+						glVertex3f( 63.0f, 60.0f,5.0f);
+						glVertex3f( 63.0f, 70.0f,0.0f);
+					glEnd();
+
+					//derecha
+					glBegin(GL_TRIANGLES);
+						glColor3f(0.56f,1.0f,0.12f);
+						glNormal3f(1.0f,0.0f,0.0f);
+						glVertex3f( 88.0f, 60.0f,5.0f);
+						glVertex3f( 88.0f, 60.0f,0.0f);
+						glVertex3f( 88.0f, 70.0f,0.0f);
+					glEnd();
+
+				//carpa FIN
+			glPopMatrix(); 
+			//ventana 4 FIN
+
+			//inferior
+				glBegin(GL_QUADS);
+					glColor3f(0.9f,0.9f,0.9f);
+					glNormal3f(0.0f,0.0f,1.0f);
+					glVertex3f( 53.0f, 10.0f,0.0f);
+					glVertex3f(242.0f, 10.0f,0.0f);
+					glVertex3f(242.0f, 20.0f,0.0f);
+					glVertex3f( 53.0f, 20.0f,0.0f);
+				glEnd();
+
+		//pared delantera central FIN
+
+		//pared delantera inferior INICIO
+
+			//inferior izquierda INICIO
+
+				//delantera
+				glBegin(GL_QUADS);
+					glColor3f(0.75f,0.75f,0.75f);
+					glNormal3f(0.0f,0.0f,1.0f);
+					glVertex3f(  8.0f,  0.0f,1.0f);
+					glVertex3f( 23.0f,  0.0f,1.0f);
+					glVertex3f( 23.0f, 10.0f,1.0f);
+					glVertex3f(  8.0f, 10.0f,1.0f);
+				glEnd();
+
+				//superior
+				glBegin(GL_QUADS);
+					glColor3f(1.0f,1.0f,1.0f);
+					glNormal3f(0.0f,1.0f,0.0f);
+					glVertex3f(  8.0f, 10.0f,1.0f);
+					glVertex3f( 23.0f, 10.0f,1.0f);
+					glVertex3f( 23.0f, 10.0f,0.0f);
+					glVertex3f(  8.0f, 10.0f,0.0f);
+				glEnd();
+
+				//derecha
+				glBegin(GL_QUADS);
+					glColor3f(0.5f,0.0f,0.0f);
+					glNormal3f(1.0f,0.0f,0.0f);
+					glVertex3f(23.0f,  0.0f,1.0f);
+					glVertex3f(23.0f,  0.0f,-8.0f);
+					glVertex3f(23.0f, 10.0f,-8.0f);
+					glVertex3f(23.0f, 10.0f,1.0f);
+				glEnd();
+
+				//derecha superior
+				glBegin(GL_QUADS);
+					glColor3f(1.0f,1.0f,1.0f);
+					glNormal3f(0.0f,1.0f,0.0f);
+					glVertex3f(23.0f, 10.0f,1.0f);
+					glVertex3f(23.0f, 10.0f,-8.0f);
+					glVertex3f(22.0f, 10.0f,-8.0f);
+					glVertex3f(22.0f, 10.0f,1.0f);
+				glEnd();
+
+			//inferior izquierda FIN
+
+			//inferior derecha INICIO
+
+				//delantera
+				glBegin(GL_QUADS);
+					glColor3f(0.75f,0.75f,0.75f);
+					glNormal3f(0.0f,0.0f,1.0f);
+					glVertex3f( 52.0f,  0.0f,1.0f);
+					glVertex3f(242.0f,  0.0f,1.0f);
+					glVertex3f(242.0f, 10.0f,1.0f);
+					glVertex3f( 52.0f, 10.0f,1.0f);
+				glEnd();
+
+				//superior
+				glBegin(GL_QUADS);
+					glColor3f(1.0f,1.0f,1.0f);
+					glNormal3f(0.0f,1.0f,0.0f);
+					glVertex3f( 52.0f, 10.0f,1.0f);
+					glVertex3f(242.0f, 10.0f,1.0f);
+					glVertex3f(242.0f, 10.0f,0.0f);
+					glVertex3f( 52.0f, 10.0f,0.0f);
+				glEnd();
+
+				//izquierda
+				glBegin(GL_QUADS);
+					glColor3f(0.5f,0.0f,0.0f);
+					glNormal3f(1.0f,0.0f,0.0f);
+					glVertex3f(52.0f,  0.0f,-8.0f);
+					glVertex3f(52.0f,  0.0f, 1.0f);
+					glVertex3f(52.0f, 10.0f, 1.0f);
+					glVertex3f(52.0f, 10.0f,-8.0f);
+				glEnd();
+
+				//izquierda superior
+				glBegin(GL_QUADS);
+					glColor3f(1.0f,1.0f,1.0f);
+					glNormal3f(0.0f,1.0f,0.0f);
+					glVertex3f(52.0f, 10.0f,-8.0f);
+					glVertex3f(52.0f, 10.0f, 1.0f);
+					glVertex3f(53.0f, 10.0f, 1.0f);
+					glVertex3f(53.0f, 10.0f,-8.0f);
+				glEnd();
+
+			//inferior derecha FIN
+
+
+
+			//delantera inferior INICIO
+
+				//delantera
+				glBegin(GL_QUADS);
+					glColor3f(0.75f,0.75f,0.75f);
+					glNormal3f(0.0f,0.0f,1.0f);
+					glVertex3f(23.0f, 0.0f,1.0f);
+					glVertex3f(52.0f, 0.0f,1.0f);
+					glVertex3f(52.0f, 3.0f,1.0f);
+					glVertex3f(23.0f, 3.0f,1.0f);
+				glEnd();
+
+				//superior (piso inferior)
+				glBegin(GL_QUADS);
+					glColor3f(0.9f,0.9f,0.9f);
+					glNormal3f(0.0f,1.0f,0.0f);
+					glVertex3f(23.0f,3.0f,1.0f);
+					glVertex3f(52.0f,3.0f,1.0f);
+					glVertex3f(52.0f,3.0f,-5.0f);
+					glVertex3f(23.0f,3.0f,-5.0f);
+				glEnd();
+
+				//escalon superior INICIO
+
+					//delantera
+					glBegin(GL_QUADS);
+						glColor3f(0.75f,0.75f,0.75f);
+						glNormal3f(0.0f,0.0f,1.0f);
+						glVertex3f(23.0f,3.0f,-5.0f);
+						glVertex3f(52.0f,3.0f,-5.0f);
+						glVertex3f(52.0f,8.0f,-5.0f);
+						glVertex3f(23.0f,8.0f,-5.0f);
+					glEnd();
+
+					//superior
+					glBegin(GL_QUADS);
+						glColor3f(0.75f,0.75f,0.75f);
+						glNormal3f(0.0f,1.0f,0.0f);
+						glVertex3f(23.0f,8.0f,-5.0f);
+						glVertex3f(52.0f,8.0f,-5.0f);
+						glVertex3f(52.0f,8.0f,-8.0f);
+						glVertex3f(23.0f,8.0f,-8.0f);
+					glEnd();
+
+				//escalon superior FIN
+
+				
+
+			//delantera inferior FIN
+
+		//pared delantera inferior FIN
+		
+
+	//PARED DERECHA INICIO
+	glPushMatrix();
+		glTranslatef(245.0f,0.0f,1.0f);
+		glRotatef(90.0f,0.0f,1.0f,0.0f);
+
+		//pared izquierda
+		glBegin(GL_QUADS);
+			glColor3f(0.39f,0.0f,0.0f);
+			glNormal3f(0.0f,0.0f,1.0f);
+			glVertex3f(  0.0f,  0.0f,5.0f);
+			glVertex3f( 10.0f,  0.0f,5.0f);
+			glVertex3f( 10.0f,110.0f,5.0f);
+			glVertex3f(  0.0f,110.0f,5.0f);
+		glEnd();
+
+		//pared derecha
+		glBegin(GL_QUADS);
+			glColor3f(0.39f,0.0f,0.0f);
+			glNormal3f(0.0f,0.0f,1.0f);
+			glVertex3f(115.0f,  0.0f,5.0f);
+			glVertex3f(125.0f,  0.0f,5.0f);
+			glVertex3f(125.0f,110.0f,5.0f);
+			glVertex3f(115.0f,110.0f,5.0f);
+		glEnd();
+
+
+		//pared interior-izquierda
+		glBegin(GL_QUADS);
+			glColor3f(0.2f,0.0f,0.0f);
+			glNormal3f(1.0f,0.0f,0.0f);
+			glVertex3f( 10.0f,  0.0f,5.0f);
+			glVertex3f( 10.0f,  0.0f,0.0f);
+			glVertex3f( 10.0f,110.0f,0.0f);
+			glVertex3f( 10.0f,110.0f,5.0f);
+		glEnd();
+
+		//pared interior-derecha
+		glBegin(GL_QUADS);
+			glColor3f(0.2f,0.0f,0.0f);
+			glNormal3f(1.0f,0.0f,0.0f);
+			glVertex3f(115.0f,  0.0f,0.0f);
+			glVertex3f(115.0f,  0.0f,5.0f);
+			glVertex3f(115.0f,110.0f,5.0f);
+			glVertex3f(115.0f,110.0f,0.0f);
+		glEnd();
+
+		//pared central
+			
+		glBegin(GL_QUADS);
+			glColor3f(0.5f,0.0f,0.0f);
+			glNormal3f(0.0f,0.0f,1.0f);
+			glVertex3f( 10.0f,  0.0f,0.0f);
+			glVertex3f(115.0f,  0.0f,0.0f);
+			glVertex3f(115.0f,110.0f,0.0f);
+			glVertex3f( 10.0f,110.0f,0.0f);
+		glEnd();
+
+
+		//pared interior-central FIN
+	glPopMatrix();
+
+	//PARED DERECHA FIN
+
+	//PARED IZQUIERDA INICIO 
+	
+    glPushMatrix();
+		
+		glTranslatef(-58.0f,0.0f,-109.0f);
+		glRotatef(-60.0f,0.0f,1.0f,0.0f);
+		//pared central-superior
+		glBegin(GL_QUADS);
+			glColor3f(0.5f,0.0f,0.0f);
+			glNormal3f(0.0f,0.0f,1.0f);
+			glVertex3f( 10.0f, 76.0f,0.0f);
+			glVertex3f(115.0f, 76.0f,0.0f);
+			glVertex3f(115.0f,110.0f,0.0f);
+			glVertex3f( 10.0f,110.0f,0.0f);
+		glEnd();
+
+		//pared izquierda
+		glBegin(GL_QUADS);
+			glColor3f(0.39f,0.0f,0.0f);
+			glNormal3f(0.0f,0.0f,1.0f);
+			glVertex3f(  0.0f,  0.0f,5.0f);
+			glVertex3f( 10.0f,  0.0f,5.0f);
+			glVertex3f( 10.0f,110.0f,5.0f);
+			glVertex3f(  0.0f,110.0f,5.0f);
+		glEnd();
+
+		//pared derecha
+		glBegin(GL_QUADS);
+			glColor3f(0.39f,0.0f,0.0f);
+			glNormal3f(0.0f,0.0f,1.0f);
+			glVertex3f(115.0f,  0.0f,5.0f);
+			glVertex3f(125.0f,  0.0f,5.0f);
+			glVertex3f(125.0f,110.0f,5.0f);
+			glVertex3f(115.0f,110.0f,5.0f);
+		glEnd();
+
+		//pared inferior
+		glBegin(GL_QUADS);
+			glColor3f(0.5f,0.0f,0.0f);
+			glNormal3f(0.0f,0.0f,1.0f);
+			glVertex3f( 10.0f,  0.0f,0.0f);
+			glVertex3f(115.0f,  0.0f,0.0f);
+			glVertex3f(115.0f, 16.0f,0.0f);
+			glVertex3f( 10.0f, 16.0f,0.0f);
+		glEnd();
+
+		//pared interior-izquierda
+		glBegin(GL_QUADS);
+			glColor3f(0.2f,0.0f,0.0f);
+			glNormal3f(1.0f,0.0f,0.0f);
+			glVertex3f( 10.0f,  0.0f,5.0f);
+			glVertex3f( 10.0f,  0.0f,0.0f);
+			glVertex3f( 10.0f,110.0f,0.0f);
+			glVertex3f( 10.0f,110.0f,5.0f);
+		glEnd();
+
+		//pared interior-derecha
+		glBegin(GL_QUADS);
+			glColor3f(0.2f,0.0f,0.0f);
+			glNormal3f(1.0f,0.0f,0.0f);
+			glVertex3f(115.0f,  0.0f,0.0f);
+			glVertex3f(115.0f,  0.0f,5.0f);
+			glVertex3f(115.0f,110.0f,5.0f);
+			glVertex3f(115.0f,110.0f,0.0f);
+		glEnd();
+
+		//pared central
+			
+		glBegin(GL_QUADS);
+			glColor3f(0.5f,0.0f,0.5f);
+			glNormal3f(0.0f,0.0f,1.0f);
+			glVertex3f( 10.0f, 16.0f,0.0f);
+			glVertex3f(115.0f, 16.0f,0.0f);
+			glVertex3f(115.0f, 76.0f,0.0f);
+			glVertex3f( 10.0f, 76.0f,0.0f);
+		glEnd();
+
+		//carpa INICIO
+
+			//frontal
+			glBegin(GL_QUADS);
+				vec1=CVector(105.0f,  0.0f,0.0f);
+				vec2=CVector(0.0f, 10.0f,-5.0f);
+				N=Normaliza(Cruz(vec1,vec2));
+				glNormal3f(N.x,N.y,N.z);
+				glColor3f(0.98f,0.79f,0.43f);
+				glVertex3f( 10.0f, 66.0f,10.0f);
+				glVertex3f(115.0f, 66.0f,10.0f);
+				glVertex3f(115.0f, 76.0f,5.0f);
+				glVertex3f( 10.0f, 76.0f,5.0f);
+			glEnd();
+
+			//superior
+			glBegin(GL_QUADS);
+				glColor3f(0.96f,0.66f,0.1f);
+				glNormal3f(0.0f,1.0f,0.0f);
+				glVertex3f( 10.0f, 76.0f,5.0f);
+				glVertex3f(115.0f, 76.0f,5.0f);
+				glVertex3f(115.0f, 76.0f,0.0f);
+				glVertex3f( 10.0f, 76.0f,0.0f);
+			glEnd();
+
+			//izquierda
+			glBegin(GL_QUADS);
+				glColor3f(0.96f,0.66f,0.1f);
+				glNormal3f(1.0f,0.0f,0.0f);
+				glVertex3f( 10.0f, 66.0f, 0.0f);
+				glVertex3f( 10.0f, 66.0f,10.0f);
+				glVertex3f( 10.0f, 76.0f, 5.0f);
+				glVertex3f( 10.0f, 76.0f, 0.0f);
+			glEnd();
+
+			//derecha
+			glBegin(GL_QUADS);
+				glColor3f(0.96f,0.66f,0.1f);
+				glNormal3f(1.0f,0.0f,0.0f);
+				glVertex3f(115.0f, 66.0f,10.0f);
+				glVertex3f(115.0f, 66.0f, 0.0f);
+				glVertex3f(115.0f, 76.0f, 0.0f);
+				glVertex3f(115.0f, 76.0f, 5.0f);
+			glEnd();
+
+		//carpa FIN
+
+		
+	glPopMatrix();
+
+	//PARED IZQUIERDA FIN
+
+	//TECHO
+	glBegin(GL_QUADS);
+		glColor3f(0.4f,0.0f,0.f);
+		glNormal3f(0.0f,1.0f,0.0f);
+		glVertex3f(  0.0f,110.0f,   3.0f);
+		glVertex3f(250.0f,110.0f,   3.0f);
+		glVertex3f(250.0f,110.0f,-125.0f);
+		glVertex3f(-67.0f,110.0f,-115.0f);
+	glEnd();
+
+	//TECHO2
+	glBegin(GL_QUADS);
+		glColor3f(0.4f,0.0f,0.f);
+		glNormal3f(0.0f,1.0f,0.0f);
+		glVertex3f(250.0f,110.0f,   3.0f);
+		glVertex3f(  0.0f,110.0f,   3.0f);
+		glVertex3f(-67.0f,110.0f,-115.0f);
+		glVertex3f(250.0f,110.0f,-125.0f);
+	glEnd();
+
+}
+
+
 void dibujaEdificio3(){
 
 	glEnable(GL_TEXTURE_2D);

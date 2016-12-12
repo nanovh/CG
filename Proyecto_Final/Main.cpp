@@ -7548,36 +7548,39 @@ int ManejaTeclado()
 		}
 	}
 
-	if(keys['X'])
+	if(keys['X'])//GOLPE
 	{
 		if(varsAnimP1.play == false)
 		{
-		player1modelo.Angtx     = 0.0f;
-		player1modelo.Angty     = 0.0f;
-		player1modelo.Angcx     = 0.0f;
-		player1modelo.Angcy     = -87.0f;
-		player1modelo.Angbi1x   = 30.0f;
-		player1modelo.Angbi1z   = 30.0f;
-		player1modelo.Angbi2x   = -180.0f;
-		player1modelo.Angbi2z   = 0.0f;
-		player1modelo.Angbd1x   = 0.0f;
-		player1modelo.Angbd1z   = -80.0f;
-		player1modelo.Angbd2x   = -5.0f;
-		player1modelo.Angbd2z   = 0.0f;
-		player1modelo.Angpizq1x = 0.0f;
-		player1modelo.Angpizq1z = 0.0f;
-		player1modelo.Angpizq2x = 0.0f;
-		player1modelo.Angpizq2z = 0.0f;
-		player1modelo.Angpder1x = 0.0f;
-		player1modelo.Angpder1z = 0.0f;
-		player1modelo.Angpder2x = 0.0f;
-		player1modelo.Angpder2z = 0.0f;
-		player1modelo.Angpi     = 0.0f;
-		player1modelo.Angpd     = 0.0f;
-		player1modelo.Xtor      = 0.0f;
-		player1modelo.Ytor      = 0.0f;
-		player1modelo.Ztor      = 0.0f;
+			player1modelo.Angtx     = 0.0f;
+			player1modelo.Angty     = -50.0f;
+			player1modelo.Angcx     = 0.0f;
+			player1modelo.Angcy     = 20.0f;
+			player1modelo.Angbi1x   = -90.0f;
+			player1modelo.Angbi1z   = 0.0f;
+			player1modelo.Angbi2x   = 0.0f;
+			player1modelo.Angbi2z   = 0.0f;
 
+			player1modelo.Angbd1x   = 0.0f;
+			player1modelo.Angbd1z   = -50.0f;
+			player1modelo.Angbd2x   = -90.0f;
+			player1modelo.Angbd2z   = -20.0f;
+
+			player1modelo.Angpizq1x = -55.0f;
+			player1modelo.Angpizq1z = 0.0f;
+			player1modelo.Angpizq2x = 55.0f;
+			player1modelo.Angpizq2z = 0.0f;
+
+			player1modelo.Angpder1x = 40.0f;
+			player1modelo.Angpder1z = 0.0f;
+			player1modelo.Angpder2x = -20.0f;
+			player1modelo.Angpder2z = 0.0f;
+
+			player1modelo.Angpi     = 0.0f;
+			player1modelo.Angpd     = 0.0f;
+			player1modelo.Xtor      = 0.0f;
+			player1modelo.Ytor      = 0.0f;
+			player1modelo.Ztor      = 0.0f;
 			disparando=true;
 		}
 	}

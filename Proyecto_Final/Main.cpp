@@ -278,6 +278,7 @@ void movimientoPersonaje(int dir)
 		player1.PosicionObj.x+=player1.VelocidadObj;
 		PosCam.x+=player1.VelocidadObj;
 		ObjCam.x+=player1.VelocidadObj;
+		LightPos[0] +=player1.VelocidadObj; //Hacia la derecha
 		player1.AngObj=90.0f;
 		}
 	}
@@ -287,6 +288,7 @@ void movimientoPersonaje(int dir)
 		player1.PosicionObj.x-=player1.VelocidadObj;
 		PosCam.x-=player1.VelocidadObj;
 		ObjCam.x-=player1.VelocidadObj;
+		LightPos[0] -=player1.VelocidadObj; //Hacia la izquierda
 		player1.AngObj=-90.0f;
 		}
 	}
@@ -7655,12 +7657,6 @@ int ManejaTeclado()
 	}
 
 	//Controles de la iluminación
-	if (keys['Q'])
-		LightPos[0] += 1.0f; //Hacia la derecha
-
-	if (keys['W'])
-		LightPos[0] -= 1.0f; //Hacia la izquierda
-
 	if (keys['E'])
 		LightPos[1] += 1.0f; //Hacia arriba
 

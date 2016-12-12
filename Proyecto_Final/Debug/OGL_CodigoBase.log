@@ -1,4 +1,4 @@
-﻿Compilación iniciada a las 06/12/2016 08:22:31 p. m..
+﻿Compilación iniciada a las 12/12/2016 06:57:59 a. m..
      1>Proyecto "C:\Users\Alan\Documents\GitHub\CG\Proyecto_Final\OGL_CodigoBase.vcxproj" en el nodo 2 (Build destinos).
      1>ClCompile:
          C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /ILibrerias /ZI /nologo /W0 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _WINDOWS /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc110.pdb" /Gd /TP /analyze- /errorReport:prompt Main.cpp
@@ -13,4 +13,4 @@
 
 Compilación correcta.
 
-Tiempo transcurrido 00:00:01.58
+Tiempo transcurrido 00:00:01.60
